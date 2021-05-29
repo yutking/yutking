@@ -9,7 +9,7 @@ $sql1="delete from y";
 $sth1 = $dbh1->prepare($sql1);
 $sth1->execute();
 
-for($i = 1; $i <= 10; $i++) {
+for($i = 1; $i <= 1000000; $i++) {
  
  $h1{$i} = 1;
  $sql1 = "insert into y (i) values ($i)";
