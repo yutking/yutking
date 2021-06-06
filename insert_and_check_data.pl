@@ -19,11 +19,11 @@ for($i = 1; $i <= 10; $i++) {
  if(!$sth1) {
   $h1{$i} = 2;
   if (!$sth1->pg_ready) {
+   `/usr/bin/pg_ctlcluster 9.4 c02 promote`
    undef($sth1);
    undef($dbh1);
    $dbh1 = DBI->connect("DBI:Pg:dbname=postgres;host=127.0.0.1;port=5434","postgres","", { RaiseError => 1, AutoCommit => 1 }) or die "Can't connect PostgreSQL server\n";
   }
-  `/usr/bin/pg_ctlcluster 9.4 c02 promote`
  }
 }
 
